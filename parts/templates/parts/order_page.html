@@ -1,0 +1,72 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'parts/style.css' %}" />
+
+<center>
+
+<h1>Partsco.com</h1>
+
+<table>
+    <tr>
+    <center>
+        <th><a href="{% url 'parts:index' %}">Home</a></th>
+        <th><a href="{% url 'parts:AI' %}">Air Intake</a></th>
+        <th><a href="{% url 'parts:BK' %}">Brakes</a></th>
+        <th><a href="{% url 'parts:CL' %}">Cooling</a></th>
+        <th><a href="{% url 'parts:DT' %}">Driveline and Trans</a></th>
+        <th><a href="{% url 'parts:EC' %}">Electronics</a></th>
+        <th><a href="{% url 'parts:EG' %}">Engine</a></th>
+        <th><a href="{% url 'parts:EX' %}">Exhaust</a></th>
+        <th><a href="{% url 'parts:FC' %}">Fuel Components</a></th>
+        <th><a href="{% url 'parts:GH' %}">Gauges and Holders</a></th>
+        <th><a href="{% url 'parts:IC' %}">Intercoolers</a></th>
+    </center>
+    </tr>
+    <tr>
+    <center>
+        <th><a href="{% url 'parts:IG' %}">Ignition Components</a></th>
+        <th><a href="{% url 'parts:IT' %}">Interior</a></th>
+        <th><a href="{% url 'parts:MC' %}">Miscellanious</a></th>
+        <th><a href="{% url 'parts:SF' %}">Safety</a></th>
+        <th><a href="{% url 'parts:SL' %}">Silicon Couplers + Hoses</a></th>
+        <th><a href="{% url 'parts:SP' %}">Suspension</a></th>
+        <th><a href="{% url 'parts:TK' %}">Turbochargers and kits</a></th>
+        <th><a href="{% url 'parts:TM' %}">Turbo misc</a></th>
+        <th><a href="{% url 'parts:WG' %}">Wastegates</a></th>
+    </center>
+    </tr>
+</table>
+
+<h2>{{ part.name }}</h2>
+<img src="{% static 'parts/images/'%}{{part.id}}.jpg" alt="Part {{part.id}}" style="width:250px;height:250px;">
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<p>In stock: {{part.inventory}}<br>
+${{part.cost}}</p>
+<form action="{% url 'parts:purchase' part.id %}" method="post">
+{% csrf_token %}
+First name:<br>
+<input type="text" name="firstname"><br>
+Last name:<br>
+<input type="text" name="lastname">
+<br>
+Address Line 1:<br>
+<input type="text" name="Address Line 1">
+<br>
+City:<br>
+<input type="city" name="City">
+<br>
+State:<br>
+<input type="state" name="State">
+<br>
+<br>
+<input type="submit" value="Purchase" />
+<br>
+</form>
+
+<footer>
+Contact: Tyler Thomas : mr.tyler.thomas@gmail.com
+</footer>
+
+</center>

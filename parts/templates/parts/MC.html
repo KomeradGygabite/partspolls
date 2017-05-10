@@ -1,0 +1,63 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'parts/style.css' %}" />
+
+<center>
+
+<h1>Partsco.com</h1>
+
+<table>
+    <tr>
+    <center>
+        <th><a href="{% url 'parts:index' %}">Home</a></th>
+        <th><a href="{% url 'parts:AI' %}">Air Intake</a></th>
+        <th><a href="{% url 'parts:BK' %}">Brakes</a></th>
+        <th><a href="{% url 'parts:CL' %}">Cooling</a></th>
+        <th><a href="{% url 'parts:DT' %}">Driveline and Trans</a></th>
+        <th><a href="{% url 'parts:EC' %}">Electronics</a></th>
+        <th><a href="{% url 'parts:EG' %}">Engine</a></th>
+        <th><a href="{% url 'parts:EX' %}">Exhaust</a></th>
+        <th><a href="{% url 'parts:FC' %}">Fuel Components</a></th>
+        <th><a href="{% url 'parts:GH' %}">Gauges and Holders</a></th>
+        <th><a href="{% url 'parts:IC' %}">Intercoolers</a></th>
+    </center>
+    </tr>
+    <tr>
+    <center>
+        <th><a href="{% url 'parts:IG' %}">Ignition Components</a></th>
+        <th><a href="{% url 'parts:IT' %}">Interior</a></th>
+        <th><a href="{% url 'parts:MC' %}">Miscellanious</a></th>
+        <th><a href="{% url 'parts:SF' %}">Safety</a></th>
+        <th><a href="{% url 'parts:SL' %}">Silicon Couplers + Hoses</a></th>
+        <th><a href="{% url 'parts:SP' %}">Suspension</a></th>
+        <th><a href="{% url 'parts:TK' %}">Turbochargers and kits</a></th>
+        <th><a href="{% url 'parts:TM' %}">Turbo misc</a></th>
+        <th><a href="{% url 'parts:WG' %}">Wastegates</a></th>
+    </center>
+    </tr>
+</table>
+
+<h2>Parts in Misceallanious</h2>
+
+{% if MC_parts %}
+    <ul>
+    {% for part in MC_parts %}
+        <li><a href="{% url 'parts:detail' part.id %}">{{ part.name }}</a>
+        <br>
+        <h3>${{part.cost}}</h3>
+        <br>
+        <img src="{% static 'parts/images/'%}{{part.id}}.jpg" alt="Part {{part.id}}" style="width:100px;height:100px;">
+        <br>
+        <h4>In-Stock: {{part.inventory}}</h4>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No parts are available.</p>
+{% endif %}
+
+<footer>
+Contact: Tyler Thomas : mr.tyler.thomas@gmail.com
+</footer>
+
+</center>

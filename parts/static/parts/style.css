@@ -1,0 +1,107 @@
+h1
+{	border: 5px solid black;
+	text-shadow: 3px 2px darkgrey;
+	font-weight: bolder;
+	border-radius: 15px;
+	background-color: rgb(255, 92, 51);
+	margin: 5px;
+	padding: 15px;
+	font-family: "Arial", Arial, sans-serif;
+	font-style: italic;
+	font-size: 60px;
+	font-variant: small-caps;
+}
+h3
+{	width: 150px;
+	border: 2px solid black;
+	font-weight: bolder;
+	border-radius: 5px;
+	background-color: red;
+	margin: 5px;
+	padding: 5px;
+	font-family: "Arial", Arial, sans-serif;
+	font-style: italic;
+}
+h4
+{	width: 200px;
+	border: 2px solid black;
+	font-weight: bolder;
+	border-radius: 5px;
+	background-color: grey;
+	margin: 5px;
+	padding: 5px;
+	font-family: "Arial", Arial, sans-serif;
+}
+footer
+{	border: 5px solid black;
+	font-weight: bolder;
+	border-radius: 10px;
+	background-color: rgb(255, 92, 51);
+	margin: 1px;
+	padding: 10px;
+	font-family: "Arial", Arial, sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	font-variant: small-caps;
+}
+li 
+{
+	width: 50%;
+	border-radius: 15px;
+	margin: 10px;
+	border: 5px solid black;
+	font-weight: bolder;
+	padding: 15px;
+	background-color: rgb(255, 92, 51);
+}
+p 
+{
+	width: 50%
+	border-radius: 15px;
+	margin: 10px;
+	border: 5px solid black;
+	font-weight: bolder;
+	padding: 15px;
+	background-color: rgb(255, 92, 51);
+}
+input
+{
+	font-weight: bolder;
+}
+body 
+{
+    background-color: rgb(115, 115, 115);
+}
+a
+{
+	font-family: "Arial", Arial, sans-serif;	
+}
+a:link
+{
+	color: white;
+}
+a:visited
+{
+	color: black;
+}
+a:hover
+{
+	color: white;
+}
+a:active
+{
+	color white;
+}
+img
+{
+	border-radius: 25px;
+	border: 5px solid black;
+}
+table, th
+{
+   border: 3px solid black;
+}
+th
+{
+	background-color: rgb(255, 92, 51);
+}
